@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface SocialMemberRepository : CrudRepository<SocialMember, Long> {
+
     fun existsByProviderAndProviderId(kakao: OAuth2Provider, id: String): Boolean
     fun findByProviderAndProviderId(kakao: OAuth2Provider, id: String): SocialMember
 }
