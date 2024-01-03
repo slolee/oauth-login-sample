@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component
 class JwtHelper {
 
     fun generateAccessToken(id: Long): String {
-        // TODO
-        return "SampleAccessToken"
+        return "SampleAccessToken $id"
     }
 }
