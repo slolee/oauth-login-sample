@@ -9,6 +9,11 @@ class OAuth2ClientService(
     private val clients: List<OAuth2Client>
 ) {
 
+    fun generateLoginPageUrl(provider: OAuth2Provider): String {
+        val client = this.selectClient(provider)
+        return client.generateLoginPageUrl()
+    }
+
     fun login(provider: OAuth2Provider, authorizationCode: String): OAuth2LoginUserInfo {
         val client = this.selectClient(provider)
         return client.getAccessToken(authorizationCode)
