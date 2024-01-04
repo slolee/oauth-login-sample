@@ -6,5 +6,5 @@ interface OAuth2Client {
     fun generateLoginPageUrl(): String
     fun getAccessToken(authorizationCode: String): String
     fun retrieveUserInfo(accessToken: String): OAuth2LoginUserInfo
-    fun isSupport(provider: OAuth2Provider): Boolean
+    fun supports(provider: OAuth2Provider): Boolean
 }

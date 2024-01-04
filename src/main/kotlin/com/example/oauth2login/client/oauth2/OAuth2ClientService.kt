@@ -21,7 +21,7 @@ class OAuth2ClientService(
     }
 
     private fun selectClient(provider: OAuth2Provider): OAuth2Client {
-        return clients.find { it.isSupport(provider) }
+        return clients.find { it.supports(provider) }
             ?: throw NotSupportedException()
     }
 }

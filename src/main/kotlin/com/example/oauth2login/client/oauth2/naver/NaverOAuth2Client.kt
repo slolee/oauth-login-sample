@@ -57,7 +57,7 @@ class NaverOAuth2Client(
             ?: throw RuntimeException("네이버 UserInfo 조회 실패")
     }
 
-    override fun isSupport(provider: OAuth2Provider): Boolean {
+    override fun supports(provider: OAuth2Provider): Boolean {
         return provider == OAuth2Provider.NAVER
     }
 
