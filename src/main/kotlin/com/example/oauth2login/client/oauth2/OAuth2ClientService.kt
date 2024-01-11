@@ -22,6 +22,6 @@ class OAuth2ClientService(
 
     private fun selectClient(provider: OAuth2Provider): OAuth2Client {
         return clients.find { it.supports(provider) }
-            ?: throw NotSupportedException()
+            ?: throw NotSupportedException("지원하지 않는 OAuth Provider 입니다.")
     }
 }
