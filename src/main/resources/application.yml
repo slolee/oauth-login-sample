@@ -12,6 +12,8 @@ spring:
     hibernate:
       ddl-auto: create
 
+jwt:
+  secret_key: "Y2g0bmp1bidzIGp3dCBzZWNyZXQga2V5Y2g0bmp1bidzIGp3dCBzZWNyZXQga2V5Y2g0bmp1bidzIGp3dCBzZWNyZXQga2V5"
 oauth2:
   kakao:
     client_id: "46b2bea914ad0bd9ccb080d5c6aa640b"
