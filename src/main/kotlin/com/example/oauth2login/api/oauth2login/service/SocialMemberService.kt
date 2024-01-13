@@ -11,14 +11,13 @@ class SocialMemberService(
 ) {
 
     fun registerIfAbsent(userInfo: OAuth2LoginUserInfo): SocialMember {
-        return if (socialMemberRepository.existsByProviderAndProviderId(userInfo.provider, userInfo.id)) {
-            socialMemberRepository.findByProviderAndProviderId(userInfo.provider, userInfo.id)
-        } else {
-            SocialMember(
+        return socialMemberRepository.findByProviderAndProviderId(userInfo.provider, userInfo.id) ?: run {
+            val socialMember = SocialMember(
                 provider = userInfo.provider,
                 providerId = userInfo.id,
                 nickname = userInfo.nickname
-            ).let { socialMemberRepository.save(it) }
+            )
+            socialMemberRepository.save(socialMember)
         }
     }
 }
